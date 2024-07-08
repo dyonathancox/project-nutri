@@ -1,0 +1,247 @@
+/* Definição de variáveis */
+:root {
+    --text-white: #ffffff;
+    --text-menu: #8EC038;
+    --btn-1: #DA2424;
+    --btn-2: #f1c40f;
+    --bg-button: #262626;
+    --cyan: #0505A9;
+    --dark: #FFFFFF;
+    --borderW: 2px;
+    --numOfBlobs: 4;
+    --blobScale: 1.7;
+    --blobScaleGoo: 1.4;
+    font-size: 62.5%;
+}
+  
+/* Reset de estilos */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    font-family: "Nunito Sans", sans-serif;
+    height: 100vh;
+}
+  
+/* Estilos comuns */
+.menu-wrapper,
+.content-wrapper {
+    width: 128rem;
+    margin: auto;
+}
+  
+/* Estilos do header */
+header {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+  
+.menu-wrapper {
+    font-size: 1.6rem;
+    text-align: right;
+    justify-content: space-between;
+}
+  
+header img {
+    width: 20rem;
+    display: flex;
+}
+  
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 2rem;
+}
+  
+.menu-wrapper ul {
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.menu-wrapper ul li {
+    cursor: pointer;
+}
+  
+.menu-wrapper ul li:hover {
+    color: var(--text-menu);
+    border-bottom: 0.1rem solid var(--text-menu);
+}
+  
+/* Estilos do main */
+main {
+    width: 100%;
+    background: antiquewhite;
+    display: flex;
+    flex-direction: row; /* Altera para row para alinhar os elementos em linha */
+    justify-content: space-between; /* Alinha os elementos nas extremidades */
+}
+.content-wrapper{
+    width: 50%; /* Define a largura do content-wrapper */
+    margin-left: calc((100vw - 128rem) / 2); /* Calcula o margin-left para respeitar o limite de 128rem */
+    padding: 13.5rem 0;
+}  
+.content-wrapper h1 {
+    font-size: 5.2rem;
+    font-weight: 800;
+}
+  
+.content-wrapper h1 span {
+    color: var(--text-menu);
+    border-bottom: .3rem solid var(--text-menu);
+}
+  
+.content-wrapper p {
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+}
+
+/*IMAGEM*/
+.img-nut {
+    width: 50%; /* Define a largura da img-nut */
+    display: flex;
+    align-items: center; /* Alinha a imagem ao lado direito */
+    justify-content: center;
+}
+.img-nut img{
+    width: 80%; /* Garante que a imagem ocupe toda a largura da div */
+    height: 80%;
+}
+
+/* Estilos dos botões */
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+  
+/* Estilos para blob-btn */
+.blob-btn {
+    position: relative;
+    z-index: 1;
+    padding: 20px 46px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-white);
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: color 0.5s;
+}
+/* Estilos específicos para o segundo botão */
+.blob-btn-2 .blob-btn__inner {
+    background: var(--btn-2);
+}
+.blob-btn::before,
+.blob-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+  
+.blob-btn::before {
+    z-index: 1;
+    border: none;
+}
+  
+.blob-btn::after {
+    z-index: -2;
+    left: calc(var(--borderW) * 1.5);
+    top: calc(var(--borderW) * 1.5);
+    transition: all 0.3s 0.2s;
+}
+  
+.blob-btn:hover {
+    color: var(--dark);
+}
+  
+.blob-btn:hover::after {
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+}
+  
+.blob-btn__inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 30px;
+    background: var(--btn-1);
+}
+  
+.blob-btn__blobs {
+    display: block;
+    height: 100%;
+    position: relative;
+    filter: url('#goo');
+}
+  
+.blob-btn__blob {
+    position: absolute;
+    top: var(--borderW);
+    width: calc(100% / var(--numOfBlobs));
+    height: 100%;
+    background: var(--bg-button);
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(var(--blobScale));
+    transition: transform 0.45s;
+}
+  
+@supports (filter: url('#goo')) {
+    .blob-btn__blob {
+        transform: translate3d(0, 150%, 0) scale(var(--blobScaleGoo));
+    }
+}
+  
+.blob-btn__blob:nth-child(1) {
+    left: calc((1 - 1) * (120% / var(--numOfBlobs)));
+    transition-delay: calc((1 - 1) * 0.08s);
+}
+  
+.blob-btn__blob:nth-child(2) {
+    left: calc((2 - 1) * (120% / var(--numOfBlobs)));
+    transition-delay: calc((2 - 1) * 0.08s);
+}
+  
+.blob-btn__blob:nth-child(3) {
+    left: calc((3 - 1) * (120% / var(--numOfBlobs)));
+    transition-delay: calc((3 - 1) * 0.08s);
+}
+  
+.blob-btn__blob:nth-child(4) {
+    left: calc((4 - 1) * (120% / var(--numOfBlobs)));
+    transition-delay: calc((4 - 1) * 0.08s);
+}
+  
+.blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(var(--blobScale));
+}
+  
+@supports (filter: url('#goo')) {
+    .blob-btn:hover .blob-btn__blob {
+        transform: translateZ(0) scale(var(--blobScaleGoo));
+    }
+}
