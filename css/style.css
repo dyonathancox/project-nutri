@@ -293,7 +293,6 @@ header img {
     /* Estilos para o primeiro <span> */
     border-radius: 4rem 0 0 4rem;
     background: var(--text-white);
-    box-shadow: -10px 0px 50px -12px rgba(38, 38, 38, 0.3);
 }
 
 .infos span:nth-child(2) {
@@ -312,7 +311,6 @@ header img {
     border-radius: 0 4rem 4rem 0;
     background: var(--bg-button);
     color: var(--text-white);
-    box-shadow: 10px 0px 50px -12px rgba(38, 38, 38, 0.3);
 }
 .infos img{
     width: 10rem;
