@@ -567,27 +567,53 @@ form .btn{
     margin-top: 5rem;
     width: 100%;
 }
-.container-subscribe{
+
+/*subscribe*/
+.container-subscribe {
     width: 100%;
-    background: url(../assets/pattern.png);
+    background: url(../assets/pattern-bgn.png) 90%;
     text-align: center;
     color: var(--text-white);
     font-size: 3.2rem;
-    padding: 15rem 0;
+    padding: 10rem 0;
 }
-.container-subscribe span{
+
+.container-subscribe h2 {
+    margin-bottom: 3rem;
+}
+
+.container-subscribe span {
     font-weight: 800;
     color: var(--bg-button);
 }
-.container-subscribe p{
+
+.container-subscribe p {
     font-size: 1.6rem;
-    color: var(--bg-button);
     margin-top: 1rem;
 }
-.container-subscribe input{
+
+.subscribe-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.container-subscribe input {
     border-radius: 3rem;
     border: .1rem solid rgba(38, 38, 38, 0.3);
-    width: 42rem;
-    padding: 2rem;
-    margin-top: 4rem; 
+    width: 45rem;
+    padding: 2rem 5rem 2rem 2rem;
+    margin-top: 4rem;
+    padding-right: 8rem; /* Espaço para o botão */
+}
+
+.blob-btn {
+    width: 20rem;
+    position: absolute;
+    right: 0;
+    left: 60%;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 1;
+    margin: 0;
+    box-sizing: border-box;
 }
