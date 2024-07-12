@@ -32,7 +32,8 @@ body {
 .container-healthy,
 .options,
 .container-dishes,
-.contact {
+.contact,
+.location {
     width: 128rem;
     margin: auto;
 }
@@ -406,7 +407,8 @@ header img {
 }
 /*OPTIONS*/
 .container-options,
-.container-contact{
+.container-contact,
+.location-container{
     width: 100%;
     background: var(--bg);
     margin-top: 10rem;
@@ -606,7 +608,7 @@ form .btn{
     padding-right: 8rem; /* Espaço para o botão */
 }
 
-.blob-btn {
+.subs {
     width: 20rem;
     position: absolute;
     right: 0;
@@ -616,4 +618,16 @@ form .btn{
     z-index: 1;
     margin: 0;
     box-sizing: border-box;
+}
+/*LOCATION*/
+.location-container{
+    margin-top: 0;
+    padding: 15rem 0;
+}
+.location{
+    background: var(--text-white);
+    border-radius: 3rem;
+    width: 128rem;
+    border: .1rem solid rgba(38, 38, 38, 0.3);
+    height: 50rem;
 }
