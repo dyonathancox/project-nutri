@@ -85,8 +85,7 @@ header img {
 }
 main {
     position: relative;
-    z-index: 1; /* Certifique-se de que o main esteja abaixo do footer */
-    
+    z-index: 1; /* Define um z-index menor que o footer */
 }
 /* Estilos do main */
 .top-main {
@@ -630,7 +629,7 @@ form .btn{
 /*LOCATION*/
 .location-container {
     margin-top: 0;
-    padding: 15rem 0;
+    padding: 15rem 0 25rem;
 }
 
 .location {
@@ -690,19 +689,24 @@ iframe {
 footer {
     width: 100%;
     position: absolute;
+    z-index: 2; /* Define um z-index maior que o main */
+    background: var(--bg-button);
 }
 
 .waves {
+    position: absolute;
+    width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1; /* Define um z-index para garantir que as waves fiquem abaixo do conteúdo do footer */
 }
-
 .footer-content {
     width: 128rem;
+    height: 15rem;
     margin: auto;
+    top: 5rem;
     background: blue;
-    height: 50rem;
     position: relative;
-    z-index: 1;
+    z-index: 2; /* Mantém o z-index do conteúdo do footer */
 }
