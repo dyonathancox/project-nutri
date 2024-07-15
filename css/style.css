@@ -83,10 +83,7 @@ header img {
     color: var(--text-menu);
     border-bottom: 0.1rem solid var(--text-menu);
 }
-main {
-    position: relative;
-    z-index: 1; /* Define um z-index menor que o footer */
-}
+
 /* Estilos do main */
 .top-main {
     background: url(../assets/banner.png) 100% no-repeat;
@@ -629,7 +626,7 @@ form .btn{
 /*LOCATION*/
 .location-container {
     margin-top: 0;
-    padding: 15rem 0 25rem;
+    padding: 15rem 0 0;
 }
 
 .location {
@@ -685,28 +682,59 @@ iframe {
     flex: 1; /* Faz o iframe ocupar o espaço restante */
     
 }
+.waves {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    margin-top: 7rem;
+    z-index: 1;
+}
+
 /* Estilos do footer */
 footer {
     width: 100%;
-    position: absolute;
-    z-index: 2; /* Define um z-index maior que o main */
     background: var(--bg-button);
+    top: 600rem;
+    position: absolute;
+    z-index: 2; /* Garante que o footer fique acima do .waves */
 }
 
-.waves {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1; /* Define um z-index para garantir que as waves fiquem abaixo do conteúdo do footer */
-}
 .footer-content {
     width: 128rem;
-    height: 15rem;
+    height: 30rem;
     margin: auto;
-    top: 5rem;
-    background: blue;
-    position: relative;
-    z-index: 2; /* Mantém o z-index do conteúdo do footer */
+    background: url(../assets/bg-footer.png) no-repeat;
+}
+.footer-content h2{
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--text-menu);
+    margin-bottom: 3rem;
+}
+
+.footer-content ul {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-white);
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding-left: 0; /* Remove o padding padrão da lista */
+}
+
+/* Estilos para cada item da lista */
+.footer-content ul li {
+    margin: 1.5rem;
+    padding-left: 2rem; /* Espaçamento à esquerda para o símbolo > */
+    position: relative; /* Para posicionamento do símbolo */
+    cursor: pointer;
+}
+.footer-content ul li:hover{
+    color: var(--text-menu);
+}
+
+/* Estilos para o símbolo > */
+.footer-content ul li::before {
+    content: ">"; /* Conteúdo do pseudo-elemento antes do texto */
+    position: absolute; /* Posicionamento absoluto */
+    left: 0; /* Posiciona o símbolo à esquerda do texto */
+    color: var(--text-menu); /* Cor do símbolo > */
 }
