@@ -3,8 +3,8 @@
     --text-white: #ffffff;
     --text-menu: #2ecc71;
     --btn-1: #DA2424;
-    --btn-2: #2ecc71;
-    --bg-button: #262626;
+    --btn-2: rgb(46, 204, 113);
+    --bg-button: #292D35;
     --bg: #F3F5ED;
     --borderW: 2px;
     --numOfBlobs: 4;
@@ -22,6 +22,8 @@
   
 body {
     font-family: "Nunito Sans", sans-serif;
+}
+.container{
     height: 100vh;
 }
   
@@ -33,7 +35,8 @@ body {
 .options,
 .container-dishes,
 .contact,
-.location {
+.location,
+.footer-content {
     width: 128rem;
     margin: auto;
 }
@@ -295,6 +298,7 @@ header img {
     /* Estilos para o primeiro <span> */
     border-radius: 4rem 0 0 4rem;
     background: var(--text-white);
+    box-shadow: 0px 0px 20px -12px rgba(38, 38, 38, 0.5);
 }
 
 .infos span:nth-child(2) {
@@ -694,47 +698,114 @@ iframe {
 footer {
     width: 100%;
     background: var(--bg-button);
-    top: 600rem;
-    position: absolute;
-    z-index: 2; /* Garante que o footer fique acima do .waves */
+    top: -15rem;
+    display: flex;
+    position: relative;
+    z-index: 2; /* Garante que o footer fique abaixo do .direitos */
 }
 
 .footer-content {
-    width: 128rem;
-    height: 30rem;
-    margin: auto;
-    background: url(../assets/bg-footer.png) no-repeat;
+    display: flex;
+    justify-content: space-between;
+    /*background: url(../assets/bg-footer.png) no-repeat;*/
+    color: var(--text-white);
+    font-size: 1.6rem;
+    height: 50rem;
 }
-.footer-content h2{
-    font-size: 2.6rem;
-    font-weight: 800;
-    color: var(--text-menu);
+
+.footer-content .one {
+    width: 30rem;
+    color: #9e9fa0;
+    line-height: 1.7em;
+}
+.footer-content section{
+    padding: 6rem 0 6rem;
+    
+}
+.footer-content section img {
+    width: 10rem;
     margin-bottom: 3rem;
 }
 
+.footer-content h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: var(--text-menu);
+}
+
 .footer-content ul {
-    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--text-white);
     list-style: none; /* Remove os marcadores padrão da lista */
     padding-left: 0; /* Remove o padding padrão da lista */
 }
 
-/* Estilos para cada item da lista */
 .footer-content ul li {
     margin: 1.5rem;
     padding-left: 2rem; /* Espaçamento à esquerda para o símbolo > */
     position: relative; /* Para posicionamento do símbolo */
     cursor: pointer;
 }
-.footer-content ul li:hover{
+
+.footer-content ul li:hover {
     color: var(--text-menu);
 }
 
-/* Estilos para o símbolo > */
 .footer-content ul li::before {
     content: ">"; /* Conteúdo do pseudo-elemento antes do texto */
     position: absolute; /* Posicionamento absoluto */
     left: 0; /* Posiciona o símbolo à esquerda do texto */
     color: var(--text-menu); /* Cor do símbolo > */
+}
+
+.icon-footer {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    align-items: start;
+    gap: 1rem 0; /* Adiciona um espaço vertical entre as linhas */
+}
+
+.icon-row {
+    display: contents;
+}
+
+.icon-row i {
+    color: var(--text-menu);
+    font-size: 2.5rem;
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+.icon-row span.green {
+    color: var(--text-menu);
+    font-weight: 800;
+    grid-column: 2;
+}
+
+.icon-footer p {
+    grid-column: 2;
+    font-size: 1.4rem;
+    margin-top: 0; /* Remove a margem superior dos parágrafos */
+    cursor: pointer;
+}
+.icon-footer p:hover{
+    color: var(--text-menu);
+}
+
+.direitos {
+    width: 100%;
+    background: #1F2228;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2; /* Garante que .direitos fique acima do footer */
+    padding: 2.5rem 0;
+    color: var(--bg);
+
+    font-size: 14px;
+    line-height: 2em
+}
+.efeito-btn{
+    display: none;
 }
