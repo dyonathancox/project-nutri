@@ -698,7 +698,7 @@ iframe {
 footer {
     width: 100%;
     background: var(--bg-button);
-    top: -15rem;
+    top: -10rem;
     display: flex;
     position: relative;
     z-index: 2; /* Garante que o footer fique abaixo do .direitos */
@@ -707,10 +707,10 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    /*background: url(../assets/bg-footer.png) no-repeat;*/
     color: var(--text-white);
     font-size: 1.6rem;
     height: 50rem;
+    margin-top: 5rem;
 }
 
 .footer-content .one {
@@ -718,10 +718,7 @@ footer {
     color: #9e9fa0;
     line-height: 1.7em;
 }
-.footer-content section{
-    padding: 6rem 0 6rem;
-    
-}
+
 .footer-content section img {
     width: 10rem;
     margin-bottom: 3rem;
@@ -729,7 +726,7 @@ footer {
 
 .footer-content h2 {
     font-size: 2.8rem;
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 3rem;
     color: var(--text-menu);
 }
@@ -801,11 +798,34 @@ footer {
     left: 0;
     z-index: 2; /* Garante que .direitos fique acima do footer */
     padding: 2.5rem 0;
+    
+}
+.direitos p{
     color: var(--bg);
-
-    font-size: 14px;
-    line-height: 2em
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 .efeito-btn{
     display: none;
+}
+/*ANIMAÇÃO*/
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Deslizamento menor */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transição mais rápida */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Aplicando um leve delay em diferentes seções, se necessário */
+.text-container:nth-child(2) .hidden {
+    transition-delay: 0.5s;
+}
+
+.text-container:nth-child(3) .hidden {
+    transition-delay: 0.5s;
 }
