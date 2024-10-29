@@ -22,6 +22,7 @@
   
 body {
     font-family: "Nunito Sans", sans-serif;
+    backgroung: var(--text-white);
 }
 .container{
     height: 100vh;
